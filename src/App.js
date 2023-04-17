@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// dependency imports
+import { Routes, Route } from "react-router-dom";
+// my imports
+import Header from "./layout/Header";
+import HomePage from "./pages/HomePage";
+import Footer from "./layout/Footer";
+import { useContext } from "react";
+import { ThemeContext } from "./context/ThemeContext";
+import ShowMiniArticles from "./pages/ShowMiniArticles";
 
 function App() {
+  const { theme, setTheme } = useContext(ThemeContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app" id={`app-${theme}`}>
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/articles" element={<ShowMiniArticles />} />
+      </Routes>
+      <Footer theme={theme} setTheme={setTheme} />
     </div>
   );
 }
