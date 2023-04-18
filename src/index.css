@@ -471,8 +471,6 @@ img {
   }
 }
 
-
-
 /* ShowFullArticle (dark-mode) */
 .fullArticle-container {
   background-color: white;
@@ -635,7 +633,71 @@ img {
 
   .comments-container h2 {
     margin: 0 0 1rem 0 ;
+  }  
+}
+
+/* LikeArticle (dark-mode) */
+
+.like-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.like-button {
+  font-family: inherit;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
+
+  background-color: transparent;
+  border: 3px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.like-button:hover {
+  background-color: black;
+  color: white;
+  scale: 1.12;
+}
+
+.update-like-error {
+  margin-top: 1rem;
+  color: #333;
+}
+
+/* LikeArticle (light-mode) */
+
+#app-light .like-button {
+ background-color: white;
+  border: 2px solid transparent;
+}
+
+#app-light .like-button:hover {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+}
+
+#app-light .update-like-error {
+  color: white;
+}
+
+#app-light .update-like-error {
+  color: white;
+}
+
+/* LikeArticle (media-query) */
+
+@media screen and (min-width: 768px) {
+  .like-container {
+    font-size: 1.5rem;
   }
-  
-  
+
+  .like-button {
+    font-size: 1.5rem;
+  }
 }
