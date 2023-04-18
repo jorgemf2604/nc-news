@@ -21,3 +21,13 @@ export const getCommentsInArticle = (article_id) => {
     return data.comments;
   });
 };
+
+export const modifyVotesInArticle = (article_id, num) => {
+  return baseApi
+    .patch(
+      `/articles/${article_id}`,
+      { inc_votes: num },
+      { headers: { "Content-Type": "application/json" } }
+    )
+    .then(({ data }) => data.comment);
+};

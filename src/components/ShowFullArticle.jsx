@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById } from "../api.js";
+import { LikeArticle } from "./LikeArticle";
 
 export function ShowFullArticle() {
   const { article_id } = useParams();
@@ -31,6 +32,7 @@ export function ShowFullArticle() {
         <img src={article.article_img_url} alt={article.title} />
       </div>
       <p className="fullArticle-body">{article.body}</p>
+      <LikeArticle article={article} />
     </div>
   );
 }
