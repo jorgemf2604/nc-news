@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import MiniArticle from "../components/MiniArticle";
 import * as api from "../api.js";
@@ -31,7 +32,13 @@ const ShowMiniArticles = () => {
     <main className="articles-container">
       {loadingMsg}
       {articles.map((article) => (
-        <MiniArticle key={article.article_id} {...article} />
+        <Link
+          className="article-link"
+          to={`/articles/${article.article_id}`}
+          key={article.article_id}
+        >
+          <MiniArticle {...article} />
+        </Link>
       ))}
     </main>
   );

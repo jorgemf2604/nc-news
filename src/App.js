@@ -7,6 +7,7 @@ import Footer from "./layout/Footer";
 import { useContext } from "react";
 import { ThemeContext } from "./context/ThemeContext";
 import ShowMiniArticles from "./pages/ShowMiniArticles";
+import { FullArticle } from "./pages/FullArticle";
 
 function App() {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/articles" element={<ShowMiniArticles />} />
+        <Route path="/articles/:article_id" element={<FullArticle />} />
       </Routes>
       <Footer theme={theme} setTheme={setTheme} />
     </div>
