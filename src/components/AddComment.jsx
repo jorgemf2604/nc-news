@@ -10,7 +10,11 @@ export function AddComment({ setComments }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue !== "") {
+    if (
+      inputValue !== "" &&
+      inputValue.trim().length !== 0 &&
+      inputValue.length > 0
+    ) {
       setIsBtnDisabled(true);
       setInputValue("");
       postCommentInArticle(article_id, inputValue)
