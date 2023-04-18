@@ -12,7 +12,7 @@ export function AddComment({ setComments }) {
     e.preventDefault();
     if (
       inputValue !== "" &&
-      inputValue.trim().length() !== 0 &&
+      inputValue.trim().length !== 0 &&
       inputValue.length > 0
     ) {
       setIsBtnDisabled(true);
