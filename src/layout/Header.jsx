@@ -1,6 +1,6 @@
 import Navigation from "../components/Navigation";
 
-const Header = () => {
+const Header = ({topics}) => {
   // we are hard-coding the user
   const loggedUser = {
     username: "tickle122",
@@ -22,7 +22,7 @@ const Header = () => {
         </div>
         <h1>Northcoders News</h1>
       </div>
-      <Navigation />
+      <Navigation topics={topics}/>
     </header>
   );
 };
