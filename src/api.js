@@ -15,3 +15,9 @@ export const getArticleById = (id) => {
     return data.article;
   });
 };
+
+export const getCommentsInArticle = (article_id) => {
+  return baseApi.get(`/articles/${article_id}/comments`).then(({ data }) => {
+    return data.comments;
+  });
+};
