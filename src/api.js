@@ -31,3 +31,13 @@ export const modifyVotesInArticle = (article_id, num) => {
     )
     .then(({ data }) => data.comment);
 };
+
+export const postCommentInArticle = (article_id, bodyText) => {
+  return baseApi
+    .post(
+      `/articles/${article_id}/comments`,
+      { username: "tickle122", body: bodyText },
+      { headers: { "Content-Type": "application/json" } }
+    )
+    .then(({ data }) => data.comment);
+};

@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { ShowFullArticle } from "../components/ShowFullArticle";
 import { ShowComments } from "../components/ShowComments";
 import { getCommentsInArticle } from "../api";
+import { AddComment } from "../components/AddComment";
+
 import image from "../assets/images/prince3.png";
 
 export function FullArticle() {
@@ -28,6 +30,7 @@ export function FullArticle() {
         </div>
       </div>
       <div className="right-side">
+        <AddComment setComments={setComments} />
         <ShowComments comments={comments} />
       </div>
     </div>
