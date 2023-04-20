@@ -31,7 +31,7 @@ export function FullArticle() {
       </div>
       <div className="right-side">
         <AddComment setComments={setComments} />
-        <ShowComments comments={comments} />
+        <ShowComments comments={comments} setComments={setComments} />
       </div>
     </div>
   );

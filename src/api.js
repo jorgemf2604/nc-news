@@ -53,3 +53,7 @@ export const getTopics = () => {
     return data.topics;
   });
 };
+
+export const deleteComment = (comment_id) => {
+  return baseApi.delete(`/comments/${comment_id}`);
+};

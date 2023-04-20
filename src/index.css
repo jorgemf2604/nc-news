@@ -609,6 +609,12 @@ img {
   position: relative;
 }
 
+.comment-inner-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .comment-author {
   border: 3px solid var(--secondary);
   font-weight: 600;
@@ -622,6 +628,19 @@ img {
   margin-bottom: 1rem;
 }
 
+.remove-comment {
+  padding: 0.7rem 1rem;
+  background-color: white;
+  border: none;
+  border-radius: 2px;
+}
+
+.remove-comment:hover {
+  cursor: pointer;
+  background-color: tomato;
+  color: white;
+}
+
 /* Comment (light-mode) */
 
 #app-light .comment-container {
@@ -631,6 +650,15 @@ img {
 #app-light .comment-author {
   border: 3px solid var(--terciary);
   color: var(--terciary);
+}
+
+#app-light .remove-comment {
+  background-color: #333;
+  color: white;
+}
+
+#app-light .remove-comment:hover {
+  background-color: tomato;
 }
 
 /* Comment (media-query) */
