@@ -361,7 +361,7 @@ img {
 
 /* Spinner (light mode) */
 
-#app-dark .spinner {
+#app-light .spinner {
   border: 20px solid #f1b7a2;
   border-top: 20px solid var(--terciary);
 }
@@ -812,7 +812,6 @@ img {
   }
 }
 
-
 /* Filter Article */
 .filter-wrapper {
   font-size: 1rem;
@@ -843,7 +842,6 @@ img {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-
 }
 
 /* Filter article (dark-mode) */
