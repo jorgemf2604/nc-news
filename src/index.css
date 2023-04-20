@@ -136,8 +136,14 @@ img {
   }
 
   .navbar {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .navbar {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
