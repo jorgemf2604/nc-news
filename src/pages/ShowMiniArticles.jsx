@@ -9,7 +9,7 @@ const ShowMiniArticles = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const location = useLocation()
-  const currentTopic = location.pathname.slice(1);
+  let currentTopic = location.pathname.slice(1);
 
   const loadingMsg = isLoading ? (
     <div className="loading-spinner">
@@ -21,7 +21,7 @@ const ShowMiniArticles = () => {
   useEffect(() => {
     setIsLoading(true);
     api
-      .getArticles(currentTopic)
+      .getArticles(currentTopic === "articles" ? undefined: currentTopic )
       .then((articlesData) => {
         setArticles(articlesData);
         setIsLoading(false);

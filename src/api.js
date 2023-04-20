@@ -4,13 +4,20 @@ const baseApi = axios.create({
   baseURL: "https://be-nc-news-oefr.onrender.com/api",
 });
 
+// export const getArticles = (topic) => {
+//   if (topic === "articles") {
+//     return baseApi.get("/articles").then(({data}) => data.articles)
+//   } else {
+//     return baseApi.get(`/articles?topic=${topic}`).then(({ data }) => data.articles);
+//   }
+// };
+
 export const getArticles = (topic) => {
-  if (topic === "articles") {
-    return baseApi.get("/articles").then(({data}) => data.articles)
-  } else {
-    return baseApi.get(`/articles?topic=${topic}`).then(({ data }) => data.articles);
-  }
-};
+  return baseApi.get("/articles", {params: {
+    topic
+  }})
+  .then(({data}) => data.articles)
+}
 
 export const getArticleById = (id) => {
   return baseApi.get(`/articles/${id}`).then(({ data }) => {
