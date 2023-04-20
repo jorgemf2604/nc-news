@@ -4,11 +4,20 @@ const baseApi = axios.create({
   baseURL: "https://be-nc-news-oefr.onrender.com/api",
 });
 
-export const getArticles = () => {
-  return baseApi.get("/articles").then(({ data }) => {
-    return data.articles;
-  });
-};
+// export const getArticles = (topic) => {
+//   if (topic === "articles") {
+//     return baseApi.get("/articles").then(({data}) => data.articles)
+//   } else {
+//     return baseApi.get(`/articles?topic=${topic}`).then(({ data }) => data.articles);
+//   }
+// };
+
+export const getArticles = (topic) => {
+  return baseApi.get("/articles", {params: {
+    topic
+  }})
+  .then(({data}) => data.articles)
+}
 
 export const getArticleById = (id) => {
   return baseApi.get(`/articles/${id}`).then(({ data }) => {
@@ -40,4 +49,10 @@ export const postCommentInArticle = (article_id, bodyText) => {
       { headers: { "Content-Type": "application/json" } }
     )
     .then(({ data }) => data.comment);
+};
+
+export const getTopics = () => {
+  return baseApi.get("/topics").then(({ data }) => {
+    return data.topics;
+  });
 };
