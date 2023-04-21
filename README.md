@@ -2,7 +2,7 @@
 
 ![multicolor-waves](./waves.png)
 
-# NC News API
+# NC News
 
 <!-- TABLE OF CONTENTS -->
 
