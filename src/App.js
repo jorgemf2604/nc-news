@@ -11,6 +11,7 @@ import { ThemeContext } from "./context/ThemeContext";
 import { FullArticle } from "./pages/FullArticle";
 import { getTopics } from "./api";
 import ShowMiniArticles from "./pages/ShowMiniArticles";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -32,6 +33,7 @@ function App() {
         <Route path="/articles" element={<ShowMiniArticles />} />
         {topics.map(topic => <Route key={topic} path={`/${topic.slug}`} element={<ShowMiniArticles />}/>)}
         <Route path="/articles/:article_id" element={<FullArticle />} />
+        <Route path="*" element={<ErrorPage message="Page not found" />} />
       </Routes>
       <Footer theme={theme} setTheme={setTheme} />
       <ToastContainer position="top-center"/>
