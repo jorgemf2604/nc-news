@@ -901,3 +901,84 @@ img {
     align-items: center;
   }
 }
+
+/* Error page */
+.notFound {
+  padding: 0 2rem;
+  line-height: 1.8;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 6rem;
+}
+
+.notFound-right img {
+  width: 100%;
+  height: 100%;
+}
+
+.notFound a {
+  background-color: var(--secondary);
+  text-decoration: none;
+  color: white;
+  padding: 4px 8px;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.notFound a:hover {
+  background-color: var(--terciary);
+}
+
+.link-back {
+  margin: 2rem 0;
+}
+
+.alice {
+  display: none;
+}
+
+/* Error page (media query) */
+@media screen and (min-width: 768px) {
+  .notFound {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2rem;
+  }
+
+  .alice {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+    width: fit-content;
+    line-height: 2;
+  }
+
+  .alice p:last-child {
+    margin: 1rem 0;
+    text-align: right;
+  }
+
+  .highlight-1 {
+    color: var(--secondary);
+  }
+
+  .highlight-2 {
+    color: #fca311;
+  }
+}
+
+/* Error page (light-mode) */
+#app-light .alice {
+  background-color: var(--primary);
+  color: white;
+}
+
+#app-light .notFound a {
+  background-color: var(--terciary);
+}
+
+#app-light .notFound a:hover {
+  background-color: var(--secondary);
+}

@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { getArticleById } from "../api.js";
 import { LikeArticle } from "./LikeArticle";
 
-export function ShowFullArticle() {
+
+export function ShowFullArticle({setError}) {
   const { article_id } = useParams();
   const [article, setArticle] = useState({});
 
@@ -13,7 +14,7 @@ export function ShowFullArticle() {
         setArticle(data);
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.response.data.msg)
       });
   }, [article_id]);
 
