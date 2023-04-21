@@ -1,5 +1,6 @@
 import { deleteComment } from "../api";
 import { useState } from "react";
+import { toast } from 'react-toastify';
 
 
 export function Comment({ author, body, votes, created_at, comment_id, setComments, comments }) {
@@ -21,6 +22,7 @@ export function Comment({ author, body, votes, created_at, comment_id, setCommen
       const filteredComments = comments.filter(comment => comment.comment_id !== Number(comment_id))
       setComments(filteredComments)
       setIsBtnDisabled(false)
+      toast.success("Comment deleted")
 
     })
     .catch(() => {
@@ -41,6 +43,7 @@ export function Comment({ author, body, votes, created_at, comment_id, setCommen
         <p className="comment-votes">🗳️ Votes : {votes}</p>
         {author === "tickle122"? <button disabled={isBtnDisabled} onClick={handleClick} className="remove-comment" id={comment_id}>🗑️ Remove</button> : null } 
       </div>
+      {isBtnDisabled ? <p>Deleting comment...</p> : null}
       {isError? <p>Something went wrong when trying to delete the comment, try again</p>: null}
     </div>
   );

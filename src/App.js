@@ -1,10 +1,12 @@
 // dependency imports
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useContext, useEffect, useState } from "react";
 // my imports
 import Header from "./layout/Header";
 import HomePage from "./pages/HomePage";
 import Footer from "./layout/Footer";
-import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "./context/ThemeContext";
 import { FullArticle } from "./pages/FullArticle";
 import { getTopics } from "./api";
@@ -32,6 +34,7 @@ function App() {
         <Route path="/articles/:article_id" element={<FullArticle />} />
       </Routes>
       <Footer theme={theme} setTheme={setTheme} />
+      <ToastContainer position="top-center"/>
     </div>
   );
 }
