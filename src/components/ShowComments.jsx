@@ -1,8 +1,8 @@
 import { Comment } from "./Comment.jsx";
 
-export function ShowComments({ comments }) {
+export function ShowComments({ comments, setComments }) {
   const commentsEl = comments.map((comment) => {
-    return <Comment key={comment.comment_id} {...comment} />;
+    return <Comment key={comment.comment_id} {...comment} comments={comments} setComments={setComments}/>;
   });
 
   return (
